@@ -1,5 +1,4 @@
 # Face-Identifier
-Python OpenCV bindings
 
 ### Instructions
 * Make a folder for each person within the "faces" directory
@@ -13,3 +12,7 @@ Python OpenCV bindings
   * Python 2
   * OpenCV
   * Tkinter
+
+### Installation
+    pip install opencv-python
+See [here](https://pypi.python.org/pypi/opencv-python) for details.
