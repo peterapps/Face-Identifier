@@ -10,7 +10,7 @@ recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 # Resize output window
 cv2.namedWindow('Webcam Capture', cv2.WINDOW_NORMAL)
-cv2.resizeWindow('Webcam Capture', 640, 360)
+cv2.resizeWindow('Webcam Capture', 640, 480)
 
 # Video capture
 cap = cv2.VideoCapture(0)
