@@ -1,10 +1,12 @@
 import numpy as np
 import cv2, os
 
+minimum = 75
+
 # Create the haar cascade
 cascPath = "./cascades/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
-recognizer = cv2.face.createLBPHFaceRecognizer()
+recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 # Resize output window
 cv2.namedWindow('Webcam Capture', cv2.WINDOW_NORMAL)
@@ -73,7 +75,6 @@ while(True):
     for (x, y, w, h) in faces:
         nbr_predicted, conf = recognizer.predict(gray[y: y + h, x: x + w])
         accuracy = round((250 - conf) / 2.5 , 1)
-        minimum = 85
         color = (0, 0, 255)
         name = str(accuracy) + "% " + image_names[nbr_predicted]
         if accuracy > minimum:
